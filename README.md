@@ -1,50 +1,131 @@
-# Welcome to your Expo app 👋
+# To-Do App 📝
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A modern to-do application built with React Native and Expo. Manage your tasks with a clean, intuitive interface that works on iOS, Android, and Web.
 
-## Get started
+## Features
 
-1. Install dependencies
+- ✅ Create, edit, and delete todos
+- ✅ Mark todos as completed/incomplete
+- ✅ Persistent storage using AsyncStorage
+- ✅ Track total and completed todos count
+- ✅ Modern UI with styled components
+- ✅ Cross-platform support (iOS, Android, Web)
+
+## Tech Stack
+
+- **React Native** - Mobile framework
+- **Expo** - Development platform
+- **Expo Router** - File-based routing
+- **TypeScript** - Type safety
+- **AsyncStorage** - Local data persistence
+- **React Hooks** - State management
+
+## Project Structure
+
+```text
+├── app/                    # Main application screens
+│   ├── _layout.tsx        # Root layout
+│   └── index.tsx          # Main to-do screen
+├── components/            # Reusable styled components
+│   ├── StyledButton.tsx
+│   ├── StyledCheckbox.tsx
+│   ├── StyledModal.tsx
+│   ├── StyledText.tsx
+│   └── StyledTextInput.tsx
+├── layout/                # Feature-specific components
+│   ├── Header/            # App header with todo stats
+│   ├── TodoCreator/       # Todo creation form
+│   ├── TodoItem/          # Individual todo item
+│   ├── TodoList/          # Todo list container
+│   └── Modals/            # Edit and delete modals
+├── hooks/                 # Custom React hooks
+│   └── useTodo.ts         # Todo state management
+├── types/                 # TypeScript type definitions
+│   └── todo.ts
+├── constants/             # App constants
+│   ├── storage.ts         # Storage keys
+│   └── ui.ts              # UI constants (colors, etc.)
+└── helpers/               # Utility functions
+    └── date.ts
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or later)
+- npm or yarn
+- Expo CLI (optional, but recommended)
+
+### Installation
+
+1. Clone the repository
+
+   ```bash
+   git clone <repository-url>
+   cd example_to-do
+   ```
+
+2. Install dependencies
 
    ```bash
    npm install
    ```
 
-2. Start the app
+3. Start the development server
 
    ```bash
-    npx expo start
+   npm start
    ```
 
-In the output, you'll find options to open the app in a
+   Or use one of the platform-specific commands:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+   ```bash
+   npm run android    # Start on Android
+   npm run ios        # Start on iOS
+   npm run web        # Start on Web
+   ```
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Running the App
 
-## Get a fresh project
+After starting the development server, you can:
 
-When you're ready, run:
+- Press `a` to open in Android emulator
+- Press `i` to open in iOS simulator
+- Press `w` to open in web browser
+- Scan the QR code with Expo Go app on your device
 
-```bash
-npm run reset-project
-```
+## Available Scripts
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+- `npm start` - Start Expo development server
+- `npm run android` - Start on Android emulator
+- `npm run ios` - Start on iOS simulator
+- `npm run web` - Start on web browser
+- `npm run lint` - Run ESLint
+- `npm test` - Run tests
+- `npm run reset-project` - Reset to blank project (development only)
 
-## Learn more
+## Usage
 
-To learn more about developing your project with Expo, look at the following resources:
+1. **Add a Todo**: Type your task in the input field and press enter or tap the add button
+2. **Complete a Todo**: Tap the checkbox next to a todo to mark it as completed
+3. **Edit a Todo**: Tap on a todo item to edit its title
+4. **Delete a Todo**: Long press on a todo item and confirm deletion
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+All todos are automatically saved to local storage and persist between app sessions.
 
-## Join the community
+## Development
 
-Join our community of developers creating universal apps.
+The app uses:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- **File-based routing** with Expo Router
+- **TypeScript** for type safety
+- **Custom hooks** for state management
+- **AsyncStorage** for data persistence
+- **Styled components** for consistent UI
+
+## Learn More
+
+- [Expo Documentation](https://docs.expo.dev/)
+- [React Native Documentation](https://reactnative.dev/)
+- [Expo Router Documentation](https://docs.expo.dev/router/introduction/)
